@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'plateau'
+plateau = Plateau.new
+if ARGV[0] == "init"    then plateau.init_dir end
+if ARGV[0] == "build"   then plateau.build end
+if ARGV[0] == "preview" then plateau.make_preview end

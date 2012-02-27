@@ -1,0 +1,246 @@
+
+
+
+
+/* LAYOUT */
+
+body {
+  padding: 3em;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+html {
+  background-color: #eee;
+}
+
+#masthead h1 {
+  color: #ff0000;
+  float: left;
+  margin: 0;
+}
+
+#masthead {
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1em;
+}
+
+
+
+/* TYPOGRAPHY & SELECTION */
+
+body {
+  font-size: 100%;
+  font-family: 'helvetica-neue', 'helvetica', 'arial', 'sans';
+  line-height: 1.4;
+  color: #111111;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: red;
+}
+
+h1 {
+  font-size: 200%:
+  margin: 0;
+  padding: 0.5em 0 0.25em 0;
+/*  color: red;*/
+}
+
+h2 {
+  font-size: 150%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 125%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 1em 1.2em;
+}
+
+ol {
+  margin: 0;
+  padding: 0 0 1em 1.4em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+a {
+  color: #000;
+}
+
+
+.selected_text {
+  background: #f2f2f2;
+  color: #000;
+}
+::selection {
+  background: #f2f2f2;
+  color: #000;
+}
+::-moz-selection {
+  background: #f2f2f2;
+  color: #000;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* NAVIGATION */
+
+#nav {
+  overflow: hidden;
+  font-size: 90%;
+  float: right;
+  margin-top: 2.2em;
+}
+
+@media screen and (max-width: 500px) {
+  #nav {
+    float: left;
+    clear: left;
+    margin-top: 0;
+  }
+  
+}
+
+#nav a {
+  background-color: #F8F9FF;
+  background-color: #f4f4f4;
+  color: #666;
+  border-radius: 1em;
+  float: left;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  color: #000536;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+  
+}
+
+#nav a:hover {
+  background-color: #8cc8fb;
+  color: #fff;
+}
+
+body.home #nav .home {background-color: #aaa;color: #fff;}
+body.posts #nav .posts {background-color: #aaa;color: #fff;}
+body.about #nav .about {background-color: #aaa;color: #fff;}
+
+
+
+
+/* TABLES */
+
+table {
+  font-size: 85%;
+  width: 100%;
+}
+table th {
+  padding: 0.5em 2%;
+  text-align: left;
+  border-bottom: 1px solid #111111;
+}
+table td {
+  padding: 0.5em 2%;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+table.nowrap td, table.nowrap th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/* POSTS */
+
+.post .header {
+  overflow: hidden;
+}
+
+.post h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1;
+}
+
+.post h1 a {
+  text-decoration: none;
+}
+
+.post h1 a:hover {
+  text-decoration: underline;
+}
+
+.post .header .tags {
+  float: right;
+}
+
+a.tag {
+  padding-left: 1.5em;
+  padding-right: 1em;
+  background-image: url('tag.png');
+  background-position: 0 -2px;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+a.tag:hover {
+  opacity: 1;
+
+}
+
+.post .header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+.post .header small {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 70%;
+}
+
+.post {
+  margin-bottom: 3em;
+}
+
+.post img {
+  max-width: 100%;
+}
+
+

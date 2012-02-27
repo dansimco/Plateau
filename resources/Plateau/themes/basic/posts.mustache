@@ -1,0 +1,28 @@
+<div class="posts">
+  {{#posts}}
+  <div class="post {{slug}}">
+    <div class="header">
+      <h1><a href="{{path}}">{{title}}</a></h1>
+      <small>Written by {{author}}. {{#date_object}}{{A}}, {{B}} {{d}} {{Y}}{{/date_object}}.</small>
+      <div class="tags"><small>{{#tags}}<a href="tagged/{{slug}}" class="tag">{{tag}}</a>{{/tags}}</small></div>
+    </div>
+    <div class="body">
+    {{#lede}}
+    {{{lede}}}
+    <p><a href="{{path}}">Read More...</a></p>
+    {{/lede}}
+    {{^lede}}
+    {{{markup}}}
+    {{/lede}}
+    {{{extras}}}
+    </div>
+    <div class="footer">
+
+    </div>
+  </div>
+  {{/posts}}
+</div>
+<div class="pagination">
+  {{#prev}}<a href="{{prev_page_url}}">Previous</a>{{/prev}}
+  {{#next}}<a href="{{next_page_url}}">Next</a>{{/next}}
+</div>

@@ -1,0 +1,1 @@
+[![Welcome to Plateau](plateau.jpg)](/about)
