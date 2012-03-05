@@ -1,5 +1,7 @@
 #Plateau!
 
+A database-less publishing engine which takes markdown copy (or straight html) and mustache templates and builds a flat-file html website & blog with rss, sitemap.xml tagging, custom metadata and per-post/page css & javascript. No serverside infrastructure required other than serving of flat html files, though publishing via git is recommended for speed. 
+
 Install:
 
 	gem install plateau
