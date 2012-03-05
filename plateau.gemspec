@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.files = [
     'README.md',
     'lib/Plateau.rb',
-    'resources/Plateau.tar'
+    'resources/Plateau.tar.gz'
   ]
 end

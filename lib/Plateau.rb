@@ -14,7 +14,7 @@ class Plateau
     version = "0.0.1"
     @gem_path = Gem.path[0]+"/gems/plateau-"+version
     @resources_path = Gem.path[0]+"/gems/plateau-"+version+"/resources"
-    system("tar -xzvf #{@resources_path}/Plateau.tar")
+    system("tar -xzvf #{@resources_path}/Plateau.tar.gz")
     system("mv Plateau #{name}")
   end
   
