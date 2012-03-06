@@ -11,7 +11,7 @@ class Plateau
   end
   
   def init_dir(name="plateau")
-    version = "0.0.1"
+    version = "0.0.2"
     @gem_path = Gem.path[0]+"/gems/plateau-"+version
     @resources_path = Gem.path[0]+"/gems/plateau-"+version+"/resources"
     system("tar -xzvf #{@resources_path}/Plateau.tar.gz")
@@ -223,8 +223,8 @@ class Plateau
       }
       @posts << post
     }
-    @posts.sort_by!{ |post| post['date'] }.reverse!
-
+    # @posts.sort_by!{ |post| post['date'] }.reverse!
+    @posts.sort! {|x,y| y['date'] <=> x['date'] }#.reverse!
   end
   
   def exhale
