@@ -30,7 +30,7 @@ class Plateau
     @templates = {}
     Dir.glob("./themes/#{@site_config['theme']}/*.mustache").each { |file_path|
       filename = file_path.split('/').last.split('.mustache').first
-      file = File.read(file_path)
+      file = File.read(file_path).unpack('C*').pack('U*')
       @templates[filename] = file
     }
   end
@@ -80,12 +80,12 @@ class Plateau
       end
       
       if File.exists? "#{file_path}/index.html" then
-        post_markup = File.read("#{file_path}/index.html")
+        post_markup = File.read("#{file_path}/index.html").unpack('C*').pack('U*')
         mod_date    = File.ctime("#{file_path}/index.html")
       else
         begin
           markdown_file_path = Dir.glob("#{file_path}/*.md")[0]
-          post_markdown = File.read(markdown_file_path)
+          post_markdown = File.read(markdown_file_path).unpack('C*').pack('U*')
           mod_date = File.ctime(markdown_file_path)
           mku = Maruku.new(post_markdown)
           post_markup = mku.to_html
@@ -156,12 +156,12 @@ class Plateau
       end
 
       if File.exists? "#{file_path}/index.html" then
-        post_markup = File.read("#{file_path}/index.html")
+        post_markup = File.read("#{file_path}/index.html").unpack('C*').pack('U*')
         mod_date    = File.ctime("#{file_path}/index.html")
       else
         begin
           markdown_file_path = Dir.glob("#{file_path}/*.md").delete_if{|x| x.match("lede")}[0]
-          post_markdown = File.read(markdown_file_path)
+          post_markdown = File.read(markdown_file_path).unpack('C*').pack('U*')
           mod_date = File.ctime(markdown_file_path)
           mku = Maruku.new(post_markdown)
           post_markup = mku.to_html
@@ -172,7 +172,7 @@ class Plateau
       end
       
       if File.exists?("#{file_path}/lede.md") then
-        post_lede_markdown = File.read("#{file_path}/lede.md")
+        post_lede_markdown = File.read("#{file_path}/lede.md").unpack('C*').pack('U*')
       end
       
       extras = [];
@@ -360,12 +360,13 @@ class Plateau
     
     #Write Home Page
     begin
-      home_page_html = File.read("./site_build/#{@site_config['home_page']}/index.html")  
-      home_page_html = make_links_absolute(home_page_html,"#{@site_config['home_page']}/")
+      home_page_html = File.read("./site_build/#{@site_config['home_page']}/index.html").unpack('C*').pack('U*')
+      home_page_html = make_links_absolute(home_page_html,"#{@site_config['home_page']}/") 
       home_page_html.gsub!("../","")
       File.open("./site_build/index.html", 'w') { |f| f.write(home_page_html) }
     rescue Exception => e
       puts "Could not write home page, sure /#{@site_config['home_page']}/ exists?"
+      puts e
     end
 
 
@@ -433,7 +434,7 @@ class Plateau
     load_templates
     Dir.chdir(post_dir)
     markdown_file_path = Dir.glob("./*.md").delete_if{|x| x.match("lede")}[0]
-    post_markdown = File.read(markdown_file_path)
+    post_markdown = File.read(markdown_file_path).unpack('C*').pack('U*')
     mku = Maruku.new(post_markdown)
     post_markup = mku.to_html
     extras = [];
