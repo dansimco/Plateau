@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "plateau"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
   s.authors = ["Daniel Sim","Exploding Box Productions"]
   s.date = %q{2012-02-13}
   s.description = 'Flat file publishing engine'

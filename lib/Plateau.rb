@@ -11,7 +11,7 @@ class Plateau
   end
   
   def init_dir(name="plateau")
-    version = "0.0.2"
+    version = "0.0.3"
     @gem_path = Gem.path[0]+"/gems/plateau-"+version
     @resources_path = Gem.path[0]+"/gems/plateau-"+version+"/resources"
     system("tar -xzvf #{@resources_path}/Plateau.tar.gz")
@@ -365,7 +365,7 @@ class Plateau
       home_page_html.gsub!("../","")
       File.open("./site_build/index.html", 'w') { |f| f.write(home_page_html) }
     rescue Exception => e
-      puts "Could not write home page, sure /@site_config['home_page']/ exists?"
+      puts "Could not write home page, sure /#{@site_config['home_page']}/ exists?"
     end
 
 
