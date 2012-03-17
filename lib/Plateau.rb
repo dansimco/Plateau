@@ -248,7 +248,11 @@ class Plateau
       puts "Rendering page #{index+1} of #{@pages.length}"
       page = @pages[index]
       Dir.mkdir("./site_build/#{page['slug']}")
-      page_html = Mustache.render(@templates['main'],{:page_content=>page['markup'],:section=>page['slug'],:extras=>page['extras']}.merge(@site_config).merge(page['meta']))
+      page_html = Mustache.render(@templates['main'],{
+        :page_content=>page['markup'],
+        :section=>page['slug'],
+        :extras=>page['extras']
+      }.merge(@site_config).merge(page['meta']))
       page_html = make_resources_absolute(page_html,"../")
       File.open("./site_build/#{page['slug']}/index.html", 'w') {|f| f.write(page_html) }
       copy_support_files("./content/pages/#{page['slug']}/","./site_build/#{page['slug']}")
